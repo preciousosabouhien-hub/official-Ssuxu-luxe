@@ -1,13 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useCart } from "@/context/CartContext";
 
-interface NavbarProps {
-    cartCount: number;
-}
 
-export default function Navbar({ cartCount }: NavbarProps) {
+export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const { cartCount } = useCart();
 
     return (
         <header className="navbar">
@@ -30,7 +29,7 @@ export default function Navbar({ cartCount }: NavbarProps) {
       <a href="#contact" onClick={() => setMenuOpen(false)}>
         Contact
       </a>
-      <a href="#shop" className="cart-link" onClick={() => setMenuOpen(false)}>
+      <a href="/cart" className="cart-link" onClick={() => setMenuOpen(false)}>
         Bag ({cartCount})
       </a>
     </nav>

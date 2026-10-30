@@ -1,12 +1,7 @@
 import { products } from "@/data/Products";
 import ProductCard from "./ProductCard";
 
-interface ProductSectionProps {
-    onAddToCart: () => void;
-}
-
 export default function ProductSection({
-    onAddToCart,
 }: ProductSectionProps) {
     return (
         <section className="shop-section" id="shop" >
@@ -20,7 +15,7 @@ export default function ProductSection({
             </div>
             <div className="product-grid">
                 {products.map((product) =>(
-                    <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
+                    <ProductCard key={product.id} product={product} />
                 ))}
                 </div>
                 <p className="demo-note">

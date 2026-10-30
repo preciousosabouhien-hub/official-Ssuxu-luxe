@@ -14,17 +14,15 @@ import Footer from "@/components/Footer";
 
 
 export default function Home() {
-  const [cartCount, setCartCount] = useState(0);
-  
-  const handleAddToCart = () => {
-   setCartCount((count) => count + 1 );
-  };
 
   return (
    <main>
-    <Navbar cartCount={cartCount} />
+    <AnnouncementBar />
+    <Navbar />
     <Hero />
-    <ProductSection onAddToCart={handleAddToCart} />
+    <Benefits />
+    <ProductSection  />
+    <About />
     <Footer />
     </main>
 

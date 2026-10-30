@@ -1,14 +1,12 @@
 import { Product } from " @/data/products";
+import { useCart } from "@/context/CartContext";
 
 interface ProductCardProps {
     product: Product;
-    onAddToCart: () => void;
 }
 
-export default function ProductCard({
-    product,
-    onAddToCart,
-}: ProductCardProps) {
+export default function ProductCard({ product }: ProductCardProps) {
+  const { addToCart } = useCart();
     return (
         <article className="product-card">
             <div className="product-image">
@@ -27,10 +25,7 @@ export default function ProductCard({
             </p>
           </div>
 
-          <button
-            className="add-button"
-            onClick={onAddToCart}
-          >
+          <button className="add-button" onClick={() => addToCart(product)}>
             Add to Bag <span>+</span>
           </button>
         </article>
