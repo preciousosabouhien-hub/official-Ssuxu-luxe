@@ -1,6 +1,6 @@
 import {products} from "@/data/products";
 import ProductCard from "./ProductCard";
-
+import ScrollReveal from "./scrollReveal";
 export default function ProductSection() {
     return (
         <section className="shop-section" id="shop" >
@@ -14,13 +14,13 @@ export default function ProductSection() {
         </div>
             <div className="product-grid">
                 {products.map((product, index)  =>(
-                    <div key={product.id} className={`animate-up delay-${Math.min(index + 1, 4)}`}>
+                    <ScrollReveal key={product.id} delay={index * 150}>
                      <ProductCard product={product} />
-                    </div>)
+                    </ScrollReveal>)
             )}
                 </div>
                 <p className="demo-note">
-                    These products and prices are placeholders. We will replace them with your actual wig inventory.</p> 
+                    These products and prices are placeholders. We will replace them with the actual wig inventory.</p> 
                  </section>
     );
 }

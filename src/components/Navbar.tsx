@@ -29,10 +29,10 @@ export default function Navbar() {
       <a href="#contact" onClick={() => setMenuOpen(false)}>
         Contact
       </a>
-      <a href="/cart" className="cart-link" onClick={() => setMenuOpen(false)}>
-        Bag ({cartCount})
+      
+    </nav><a href="/cart" className="cart-link">
+        Cart({cartCount})
       </a>
-    </nav>
     </header>
     );
 }

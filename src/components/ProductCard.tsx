@@ -26,7 +26,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
 
           <button className="add-button" onClick={() => addToCart(product)}>
-            Add to Bag <span>+</span>
+            Add to Cart <span>+</span>
           </button>
         </article>
 

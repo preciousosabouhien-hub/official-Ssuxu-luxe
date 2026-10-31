@@ -343,7 +343,7 @@ background: #eee4d8;
 text-align: center;
 }
 
-.about-section h2 {
+.about-section-h2 {
 max-width: 600px;
 margin: 15px 0;
 }
@@ -353,6 +353,12 @@ max-width: 590px;
 color: var(--muted);
 font-size: 13px;
 line-height: 1.9;
+}
+.about-paragraph{
+   max-width: 590px;
+color: var(--muted);
+font-size: 13px;
+line-height: 1.9; 
 }
 
 .footer {
@@ -706,50 +712,24 @@ padding: 22px;
 }
 }
 
-/* BOTTOM-TO-TOP FADE-IN ANIMATION */
-
-@keyframes fadeInUp {
-from {
-opacity: 0;
-transform: translateY(35px);
+/* SCROLL REVEAL ANIMATION */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
 }
 
-to {
-opacity: 1;
-transform: translateY(0);
-}
-}
-
-.animate-up {
-animation: fadeInUp 0.8s ease-out both;
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Animation delays for a staggered effect */
-
-.delay-1 {
-animation-delay: 0.2s;
-}
-
-.delay-2 {
-animation-delay: 0.4s;
-}
-
-.delay-3 {
-animation-delay: 0.6s;
-}
-
-.delay-4 {
-animation-delay: 0.8s;
-}
-
-/* Respect reduced-motion preferences */
-
-@media (prefers-reduced-motion: reduce) {
-.animate-up,
-.delay-1,
-.delay-2,
-.delay-3,
-.delay-4 {
-animation: none;
-}
+/* Accessibility respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce){
+    .scroll-reveal{
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
