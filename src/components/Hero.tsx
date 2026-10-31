@@ -2,7 +2,7 @@ export default function Hero() {
     return(
         
   <section className="hero">
-    <div className="hero-content">
+    <div className="hero-content animate-up">
       <p className="eyebrow">THE ART OF LUXURY HAIR</p>
 
       <h1>
@@ -23,7 +23,7 @@ export default function Hero() {
       <p className="hero-note">BEAUTY IN EVERY STRAND.</p>
     </div>
 
-    <div className="hero-image">
+    <div className="hero-image animate-up delay-2">
       <img
         src="/wig1.jpeg"
         alt="Beauty inspiration for Ssuxuluxe Hair"

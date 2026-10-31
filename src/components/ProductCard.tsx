@@ -1,4 +1,4 @@
-import { Product } from " @/data/products";
+import { Product } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 
 interface ProductCardProps {

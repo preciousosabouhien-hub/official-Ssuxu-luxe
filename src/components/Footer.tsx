@@ -7,6 +7,6 @@ export default function Footer(){
     <p>Your beauty. Your confidence. Your crown.</p>
     <p>© 2026 Ssuxuluxe Hair. All rights reserved.</p>
   </footer>
-    )
+    );
 }
  
