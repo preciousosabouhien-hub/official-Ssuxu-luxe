@@ -14,21 +14,21 @@ return (
   <div className="summary-row">
     <ScrollReveal delay={300}>
     <span>Items ({cartCount})</span>
-    <span>₦{subtotal.toLocaleString("en-NG")}</span>
+    <span> ${subtotal.toLocaleString("en-NG")}</span>
     </ScrollReveal>
   </div>
 
   <div className="summary-row">
     <ScrollReveal delay={400}>
     <span>Delivery</span>
-    <span>Calculated at checkout</span>
+    <span> Calculated at checkout</span>
     </ScrollReveal>
   </div>
 
   <div className="summary-total">
     <ScrollReveal delay={600}>
     <span>Subtotal</span>
-    <span>₦{subtotal.toLocaleString("en-NG")}</span>
+    <span> ${subtotal.toLocaleString("en-NG")}</span>
   </ScrollReveal>
   </div>
 

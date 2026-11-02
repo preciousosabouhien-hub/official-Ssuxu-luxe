@@ -1,11 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import type { CartItem as CartItemType } from "@/context/CartContext";
+import type { Product } from "@/data/products";
 
 interface CartItemProps {
 item: CartItemType;
 }
+
 
 export default function CartItem({ item }: CartItemProps) {
 const {
@@ -16,19 +19,21 @@ removeFromCart,
 
 return (
   <article className="cart-item" key={item.product.id}>
+      <Link href={`/products/${item.product.slug}`} className="product-name-link" >
               <img
                 src={item.product.image}
                 alt={item.product.name}
                 className="cart-item-image"
-              />
+              /></Link>
   <div className="cart-item-details">
+    <Link href={`/products/${item.product.slug}`} className="product-name-link" >
     <p className="product-category">
       {item.product.category}
     </p>
     <h3>{item.product.name}</h3>
     <p className="cart-item-price">
-      ₦{item.product.price.toLocaleString("en-NG")}
-    </p>
+      ${item.product.price.toLocaleString("en-NG")}
+    </p></Link>
     <div className="quantity-control">
       <button
         type="button"
@@ -55,7 +60,7 @@ return (
     </button>
   </div>
   <p className="cart-line-total">
-    ₦{(item.product.price * item.quantity).toLocaleString("en-NG")}
+    ${(item.product.price * item.quantity).toLocaleString("en-NG")}
   </p>
 </article>
 
