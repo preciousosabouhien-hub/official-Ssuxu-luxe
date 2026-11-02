@@ -62,7 +62,7 @@ return (
     <h3>Product Features</h3>
     </ScrollReveal>
 
-    <ScrollReveal key={product.features} delay={900} >
+    <ScrollReveal  delay={900} >
     <ul className="product-features">
       {product.features.map((feature) => (
         <li key={feature}>{feature}</li>
