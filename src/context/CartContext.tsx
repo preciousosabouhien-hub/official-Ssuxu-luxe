@@ -1,42 +1,41 @@
-"use client";
+
+ "use client";
 
 import {
-createContext,
-useContext,
-useEffect,
-useState,
-type ReactNode,
-} from "react";
+createContext,useContext, useEffect, useState, type ReactNode, } from "react";
 
 import type { Product } from "@/data/products";
 
-// Defines the structure of each cart item
+export interface ProductOptions {
+length: string;
+laceType: string;
+density: string;
+color: string;
+}
+
 export interface CartItem {
 product: Product;
 quantity: number;
+selectedOptions: ProductOptions;
 }
 
-// Defines the functions and values available through CartContext
 interface CartContextType {
 cart: CartItem[];
 cartCount: number;
 subtotal: number;
-addToCart: (product: Product) => void;
+addToCart: (product: Product, options: ProductOptions) => void;
 increaseQuantity: (productId: number) => void;
 decreaseQuantity: (productId: number) => void;
-removeFromCart: (productId: number) => void;
+removeFromCart: (productId: number, selectedOptions?: ProductOptions) => void;
 clearCart: () => void;
 }
 
-// Create the Cart Context
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-// Cart Provider
 export function CartProvider({ children }: { children: ReactNode }) {
 const [cart, setCart] = useState<CartItem[]>([]);
 const [isLoaded, setIsLoaded] = useState(false);
 
-// Load saved cart from localStorage when the app starts
 useEffect(() => {
 try {
 const savedCart = localStorage.getItem("ssuxuluxe-cart");
@@ -44,7 +43,25 @@ const savedCart = localStorage.getItem("ssuxuluxe-cart");
   if (savedCart) {
     const parsedCart = JSON.parse(savedCart);
     if (Array.isArray(parsedCart)) {
-      setCart(parsedCart);
+      setCart(
+        parsedCart
+          .filter(
+            (item) =>
+              item.product &&
+              item.product.id &&
+              Number.isFinite(item.quantity) &&
+              item.quantity > 0
+          )
+          .map((item) => ({
+            ...item,
+            selectedOptions: item.selectedOptions ?? {
+              length: "",
+              laceType: "",
+              density: "",
+              color: "",
+            },
+          }))
+      );
     }
   }
 } catch (error) {
@@ -56,100 +73,85 @@ const savedCart = localStorage.getItem("ssuxuluxe-cart");
 
 }, []);
 
-// Save cart to localStorage whenever it changes
 useEffect(() => {
 if (isLoaded) {
 localStorage.setItem("ssuxuluxe-cart", JSON.stringify(cart));
 }
 }, [cart, isLoaded]);
 
-// Add a product to the cart
-const addToCart = (product: Product) => {
+const addToCart = (product: Product, options: ProductOptions) => {
 setCart((currentCart) => {
 const existingItem = currentCart.find(
-(item) => item.product.id === product.id
+(item) =>
+item.product.id === product.id &&
+JSON.stringify(item.selectedOptions) === JSON.stringify(options)
 );
 
   if (existingItem) {
     return currentCart.map((item) =>
-      item.product.id === product.id
+      item.product.id === product.id &&
+      JSON.stringify(item.selectedOptions) === JSON.stringify(options)
         ? { ...item, quantity: item.quantity + 1 }
         : item
     );
   }
-  return [...currentCart, { product, quantity: 1 }];
+  return [
+    ...currentCart,
+    {
+      product,
+      quantity: 1,
+      selectedOptions: options,
+    },
+  ];
 });
 
 };
 
-// Increase product quantity
 const increaseQuantity = (productId: number) => {
 setCart((currentCart) =>
 currentCart.map((item) =>
 item.product.id === productId
-? { ...item, quantity: item.quantity + 1 }
-: item
-)
-);
-};
+? { ...item, quantity: item.quantity + 1 } : item)); };
 
-// Decrease product quantity
-// Remove the product if its quantity reaches zero
 const decreaseQuantity = (productId: number) => {
 setCart((currentCart) =>
 currentCart
 .map((item) =>
 item.product.id === productId
-? { ...item, quantity: item.quantity - 1 }
-: item
-)
-.filter((item) => item.quantity > 0)
-);
-};
+? { ...item, quantity: item.quantity - 1 }: item)
+.filter((item) => item.quantity > 0));};
 
-// Remove a product completely
-const removeFromCart = (productId: number) => {
+const removeFromCart = (
+productId: number,
+selectedOptions?: ProductOptions
+) => {
 setCart((currentCart) =>
-currentCart.filter((item) => item.product.id !== productId)
-);
-};
+currentCart.filter(
+(item) =>
+item.product.id !== productId || (selectedOptions && JSON.stringify(item.selectedOptions) !== JSON.stringify(selectedOptions))));};
 
-// Empty the entire cart
 const clearCart = () => {
 setCart([]);
 };
 
-// Calculate total number of products in the cart
 const cartCount = cart.reduce(
 (total, item) => total + item.quantity,
 0
 );
 
-// Calculate cart subtotal
 const subtotal = cart.reduce(
 (total, item) => total + item.product.price * item.quantity,
 0
 );
 
 return (
-<CartContext.Provider
-value={{
-cart,
-cartCount,
-subtotal,
-addToCart,
-increaseQuantity,
-decreaseQuantity,
-removeFromCart,
-clearCart,
-}}
->
+ <CartContext.Provider value={{cart,cartCount,subtotal,
+addToCart,increaseQuantity,decreaseQuantity,removeFromCart,clearCart,}}>
 {children}
 </CartContext.Provider>
 );
 }
 
-// Custom hook for accessing the cart
 export function useCart() {
 const context = useContext(CartContext);
 

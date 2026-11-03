@@ -1,24 +1,43 @@
 export interface Product {
-id: number;
-slug: string;
-name: string;
-category: string;
-price: number;
-image: string;
-description: string;
-features: string[];
-}
+  id: number;
+  slug: string;
+  name: string;
+  category: string;
+  price: number;
+  image: string;
+  description: string;
+  features: string[];
 
+  availability: "In Stock" | "Out of Stock" | "Pre-order";
+  hairType: string;
+  lengths: string[];
+  availableOptions: { laceTypes: string[]; densities: string[]; colors: string[]; };
+}
 export const products: Product[] = [
-{
-id: 1,
-slug: "luxury-body-wave",
-name: "Luxury Body Wave",
-category: "Human Hair",
-price: 185,
-image: "/hair3.jpeg",
-description: "Experience effortless elegance with our Luxury Body Wave wig. Its beautiful flowing waves create a soft, natural-looking finish suitable for everyday wear and special occasions.",
-features: ["Natural-looking waves", "Soft texture", "Versatile styling"],
+ {
+  id: 1,
+  slug: "luxury-body-wave",
+  name: "Luxury Body Wave",
+  category: "Human Hair",
+  price: 185,
+  image: "/hair3.jpeg",
+
+  description:
+    "Experience effortless elegance with our Luxury Body Wave wig.",
+
+  features: [
+    "Natural-looking waves", "Soft texture", "Versatile styling" ],
+
+  availability: "In Stock",
+
+  hairType: "100% Human Hair",
+
+  lengths: ["12", "14", "16", "18", "20", "22", "24"],
+
+  availableOptions: {
+    laceTypes: ["13x4 Lace Front", "13x6 Lace Front", "4x4 Closure"],
+    densities: ["150%", "180%", "200%"],
+    colors: ["Natural Black", "Brown", "613 Blonde"] }
 },
 {
 id: 2,
@@ -29,6 +48,16 @@ price: 220,
 image: "/wig3.jpeg",
 description: "Achieve a sleek and sophisticated look with our Silky Straight Wig. Designed for a smooth, polished appearance.",
 features: ["Sleek straight finish", "Smooth appearance", "Elegant styling"],
+  availability: "In Stock",
+
+  hairType: "100% Human Hair",
+
+  lengths: ["12", "14", "16", "18", "20", "22", "24"],
+
+  availableOptions: {
+    laceTypes: ["13x4 Lace Front", "13x6 Lace Front", "4x4 Closure"],
+    densities: ["150%", "180%", "200%"],
+    colors: ["Natural Black", "Brown", "613 Blonde"] }
 },
 {
 id: 3,
@@ -39,6 +68,16 @@ price: 45,
 image: "/hair4.jpeg",
 description: "Add volume and personality to your look with our Classic Curly Wig. Its beautiful curls create a stylish and glamorous appearance.",
 features: ["Beautiful curls", "Full-looking volume", "Easy styling"],
+  availability: "In Stock",
+
+  hairType: "100% Human Hair",
+
+  lengths: ["12", "14", "16", "18", "20", "22", "24"],
+
+  availableOptions: {
+    laceTypes: ["13x4 Lace Front", "13x6 Lace Front", "4x4 Closure"],
+    densities: ["150%", "180%", "200%"],
+    colors: ["Natural Black", "Brown", "613 Blonde"] }
 },
 {
 id: 4,
@@ -49,6 +88,16 @@ price: 185,
 image: "/wig.jpeg",
 description: "Enjoy a timeless hairstyle with our Premium Body Wave. Its flowing waves offer a sophisticated look for different occasions.",
 features: ["Flowing waves", "Soft appearance", "Versatile styling"],
+  availability: "In Stock",
+
+  hairType: "100% Human Hair",
+
+  lengths: ["12", "14", "16", "18", "20", "22", "24"],
+
+  availableOptions: {
+    laceTypes: ["13x4 Lace Front", "13x6 Lace Front", "4x4 Closure"],
+    densities: ["150%", "180%", "200%"],
+    colors: ["Natural Black", "Brown", "613 Blonde"] }
 },
 {
 id: 5,
@@ -59,6 +108,16 @@ price: 220,
 image: "/hair1.jpeg",
 description: "Our Classic Silky Straight wig delivers a clean, polished look for customers who love a simple and elegant hairstyle.",
 features: ["Straight finish", "Elegant appearance", "Versatile styling"],
+  availability: "In Stock",
+
+  hairType: "100% Human Hair",
+
+  lengths: ["12", "14", "16", "18", "20", "22", "24"],
+
+  availableOptions: {
+    laceTypes: ["13x4 Lace Front", "13x6 Lace Front", "4x4 Closure"],
+    densities: ["150%", "180%", "200%"],
+    colors: ["Natural Black", "Brown", "613 Blonde"] }
 },
 {
 id: 6,
@@ -69,5 +128,15 @@ price: 45,
 image: "/hair2.jpeg",
 description: "Make a statement with our Voluminous Curly Wig, featuring a beautiful curly style that adds character to your look.",
 features: ["Voluminous curls", "Full-looking style", "Glamorous finish"],
+  availability: "In Stock",
+
+  hairType: "100% Human Hair",
+
+  lengths: ["12", "14", "16", "18", "20", "22", "24"],
+
+  availableOptions: {
+    laceTypes: ["13x4 Lace Front", "13x6 Lace Front", "4x4 Closure"],
+    densities: ["150%", "180%", "200%"],
+    colors: ["Natural Black", "Brown", "613 Blonde"] }
 },
 ];
