@@ -916,7 +916,7 @@ padding: 22px;
   margin-bottom: 20px;
 }
 
-.shop-hero > p:not(.shop-eyebrow){
+.shop-hero-p{
   max-width: 550px;
   margin: 0 auto 20px;
   color: #76665c;
