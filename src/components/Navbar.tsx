@@ -20,7 +20,7 @@ export default function Navbar() {
                 
     <nav className={menuOpen ? "nav-links open" : "nav-links"}>
       <a href="/">Home</a>
-      <a href="#shop" onClick={() => setMenuOpen(false)}>
+      <a href="/shop" onClick={() => setMenuOpen(false)}>
         Shop
       </a>
       <a href="#about" onClick={() => setMenuOpen(false)}>
