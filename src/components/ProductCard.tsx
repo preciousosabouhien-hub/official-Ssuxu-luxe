@@ -37,7 +37,7 @@ return (
           <Link href={`/products/${product.slug}`} className="view-details-button" >
             View Details
           </Link>
-          <button type="button" className="add-button" onClick={() => addToCart(product)} >
+          <button type="button" className="add-button" onClick={() => addToCart(product, { length: "", laceType: "", density:"", color: "",})} >
             Add to Cart <span>+</span>
           </button>
       </div>
