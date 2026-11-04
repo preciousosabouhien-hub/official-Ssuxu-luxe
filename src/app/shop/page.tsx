@@ -2,10 +2,12 @@
     import { products } from "@/data/products";
     import  ProductCard from "@/components/ProductCard";
     import ScrollReveal from "@/components/scrollReveal";
+    import Navbar from "@/components/Navbar";
     import Footer from "@/components/Footer";
     export default function ShopPage() {
     return(
             <main className="shop-page">
+              <Navbar />
                 <section className="shop-hero">
                  <ScrollReveal delay={250}>
                  <p className="shop-eyebrow">THE SSUXULUXE COLLECTION </p>
