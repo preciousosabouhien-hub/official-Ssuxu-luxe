@@ -158,7 +158,7 @@ return (
        </ScrollReveal>
 
 
-      <ScrollReveal delay="1050">
+      <ScrollReveal delay={1050}>
       <label>
         Colour
         <select
