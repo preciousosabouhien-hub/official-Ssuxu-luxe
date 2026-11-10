@@ -28,13 +28,15 @@ return (
               <h3>{product.name}</h3>
             </Link>
             <p className="product-category">{product.category}</p>
+          
+           
           </div>
           <p className="product-price">
             ${product.price.toLocaleString("en-US")}
           </p>
       </div>
       <div className="product-actions">
-          <Link href={`/products/${product.slug}`} className="view-details-button" >
+          <Link href={`/products/${product.slug}`} className="details-button" >
             View Details
           </Link>
           <button type="button" className="add-button" onClick={() => addToCart(product, { length: "", laceType: "", density:"", color: "",})} >

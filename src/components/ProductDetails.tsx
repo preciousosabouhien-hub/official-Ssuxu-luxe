@@ -61,19 +61,25 @@ return (
       <div className="product-details-image">
       <img src={product.image} alt={product.name} />  
       </div>
-      </ScrollReveal>
+    </ScrollReveal>
+
   <div className="product-details-info">
+
     <ScrollReveal delay={400}>
       <p className="eyebrow">{product.category}</p>
     </ScrollReveal>
+
     <ScrollReveal delay={450}>
       <h1>{product.name}</h1>
     </ScrollReveal>
+
     <ScrollReveal delay={600}>
       <p className="product-details-price">
         ${product.price.toFixed(2)}
       </p>
     </ScrollReveal>
+     
+     <ScrollReveal delay={650}>
     <p className="product-availability">
       <span
         className={
@@ -83,33 +89,41 @@ return (
         {product.availability}
       </span>
     </p>
+    </ScrollReveal>
+
+    <ScrollReveal delay={800}>
     <p className="product-hair-type">
       Hair Type: <strong>{product.hairType}</strong>
     </p>
     <p className="product-details-description">
       {product.description}
     </p>
+    </ScrollReveal>
+
+     <ScrollReveal delay={850}>
     <h3>Product Features</h3>
     <ul className="product-features">
       {product.features.map((feature) => (
         <li key={feature}>{feature}</li>
       ))}
     </ul>
+    </ScrollReveal>
+
+    
     <div className="product-options">
-      <label>
+     <ScrollReveal delay={900}>
+       <label>
         Length
-        <select
-          value={options.length}
-          onChange={(e) => updateOption("length", e.target.value)}
-        >
+        <select value={options.length} onChange={(e) => updateOption("length", e.target.value)} >
           <option value="">Select length</option>
           {product.lengths.map((length) => (
-            <option key={length} value={length}>
-              {length} inches
-            </option>
+            <option key={length} value={length}> {length} inches </option>
           ))}
         </select>
       </label>
+      </ScrollReveal>
+
+      <ScrollReveal delay={950}>
       <label>
         Lace Type
         <select
@@ -124,6 +138,9 @@ return (
           ))}
         </select>
       </label>
+      </ScrollReveal>
+
+      <ScrollReveal delay={1000}>
       <label>
         Density
         <select
@@ -138,6 +155,10 @@ return (
           ))}
         </select>
       </label>
+       </ScrollReveal>
+
+
+      <ScrollReveal delay="1050">
       <label>
         Colour
         <select
@@ -152,7 +173,10 @@ return (
           ))}
         </select>
       </label>
+      </ScrollReveal>
+
     </div>
+    <ScrollReveal delay={1100}>
     <div className="details-quantity">
       <span>Quantity</span>
       <div className="quantity-control">
@@ -171,6 +195,9 @@ return (
         </button>
       </div>
     </div>
+    </ScrollReveal>
+
+    <ScrollReveal delay={1150}>
     <button
       type="button"
       className="add-button details-add-button"
@@ -183,9 +210,13 @@ return (
           ? "Added to Bag ✓"
           : "Add to Bag"}
     </button>
+    </ScrollReveal>
+
+    <ScrollReveal delay={1200}>
     <Link href="/shop" className="back-to-shop">
       Continue Shopping
     </Link>
+    </ScrollReveal>
   </div>
 </section>
 

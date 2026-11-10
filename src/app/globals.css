@@ -827,6 +827,26 @@ padding: 22px;
 .link-route{
     margin-top:50px;
     justify-self: center;}
+
+.details-button{
+  width: 100%;
+  padding: 13px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #d7c6b6;
+  background: transparent;
+  color: var(--chocolate);
+  cursor: pointer;
+  transition:
+  background 0.2s ease,
+  color 0.2s ease;
+}
+.details-button:hover{
+ background: #3d2920;
+ transform: translateY(-2px);
+ color:#fff;
+}
 @media (max-width: 1100px){
     .product-details-image {
     width: 400px;
