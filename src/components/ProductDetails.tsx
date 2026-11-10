@@ -55,8 +55,9 @@ setTimeout(() => setAdded(false), 2000);
 
 };
 
-return (
+return ( 
   <section className="product-details-page">
+    
     <ScrollReveal key={product.id} delay={400}>
       <div className="product-details-image">
       <img src={product.image} alt={product.name} />  
