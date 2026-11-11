@@ -4,7 +4,15 @@ export default function Footer(){
       
        <footer className="footer" id="contact"><ScrollReveal delay={700}>
     <a href="/" className="logo">
-      Ssuxuluxe Hair
+     
+       
+            <div className="nav-icon">
+               <img
+        src="/Ssuxuluxe-hair.png"
+        alt="Beauty inspiration for Ssuxuluxe Hair"
+      /></div>
+      <br/>
+       Ssuxuluxe Hair
     </a>
     </ScrollReveal>
     <ScrollReveal delay={800}>

@@ -1,5 +1,6 @@
 "use client";
-
+//     Ssu<span>xu</span>luxe Hair 
+     
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 
@@ -11,7 +12,11 @@ export default function Navbar() {
     return (
         <header className="navbar">
             <a href="/" className="logo">
-            Ssu<span>xu</span>luxe Hair </a>
+            <div className="nav-icon">
+               <img
+        src="/Ssuxuluxe-hair.png"
+        alt="Beauty inspiration for Ssuxuluxe Hair"
+      /></div></a>
 
             <button type="button" className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle navigation" 
