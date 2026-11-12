@@ -6,13 +6,12 @@ export default function Footer(){
     <a href="/" className="logo">
      
        
-            <div className="nav-icon">
+            <div className="footer-icon">
                <img
         src="/Ssuxuluxe-hair.png"
         alt="Beauty inspiration for Ssuxuluxe Hair"
       /></div>
       <br/>
-       Ssuxuluxe Hair
     </a>
     </ScrollReveal>
     <ScrollReveal delay={800}>

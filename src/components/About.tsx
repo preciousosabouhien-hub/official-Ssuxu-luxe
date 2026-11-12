@@ -14,7 +14,7 @@ export default function About(){
     </p>  </ScrollReveal>
    
     <ScrollReveal delay={300}>
-    <a href="#shop" className="primary-button">
+    <a href="/shop" className="primary-button">
       Find Your Style <span>→</span>
     </a></ScrollReveal>
   </section>

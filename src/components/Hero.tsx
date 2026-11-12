@@ -24,7 +24,7 @@ export default function Hero() {
       </ScrollReveal>
        
        <ScrollReveal delay={650}>
-      <a href="#shop" className="primary-button">
+      <a href="/shop" className="primary-button">
         Explore Collection <span>→</span>
       </a>
       </ScrollReveal>
