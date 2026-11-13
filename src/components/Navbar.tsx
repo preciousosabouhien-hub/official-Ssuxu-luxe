@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faXmark, faCartShopping } from "@fortawesome/free-solid-svg-icons" ;
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,7 +31,7 @@ export default function Navbar() {
         aria-expanded={menuOpen}
         aria-controls="main-navigation"
       >
-        {menuOpen ? "✕" : "☰"}
+       <FontAwesomeIcon icon={menuOpen ? faXmark : faBars } />
       </button>
 
       <nav
@@ -54,7 +56,7 @@ export default function Navbar() {
       </nav>
 
       <Link href="/cart" className="cart-link" onClick={closeMenu}>
-        Cart ({cartCount})
+      <FontAwesomeIcon icon={faCartShopping} /> ({cartCount})
       </Link>
     </header>
   );
