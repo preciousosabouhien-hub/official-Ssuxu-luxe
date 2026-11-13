@@ -3,14 +3,14 @@
 
 :root {
 --primary-color: #000000;
---complimentary-color: #ccac1b;
---brown: #e4d12c;
+--complimentary-color: #bb1a73;
+--brown: #d31f97;
 --beige: #e9ddce;
---muted: #ddd9b4d2;
+--muted: #ce95ced2;
 --white: #ffffff;
 --font-white: #ffffff;
---primary-btn-color: #ccac1b;
---complimentary-color-1: #888147;
+--primary-btn-color: #bb1a73;
+--complimentary-color-1: #cc99c9;
 }
 
 * {
@@ -47,16 +47,68 @@ font-size: 11px;
 letter-spacing: 1.6px;
 }
 
+
+/* STICKY NAVBAR */
+
 .navbar {
-min-height: 84px;
-padding: 20px 7%;
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 30px;
-background-color: var(--primary-color);
-border-bottom: 1px solid var(--complimentary-color);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  min-height: 84px;
+  padding: 20px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background-color: var(--primary-color);
+  width: 100%;
+
+  box-shadow: 0 3px 15px var(--brown);
+
+  transition: box-shadow 0.3s ease;
 }
+
+/* NAVIGATION LINKS */
+
+
+/* VIEW ALL PRODUCTS BUTTON */
+
+.view-all-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.view-all-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 15px 35px;
+
+  background: var(--primary-color);
+  color: var(--complimentary-color);
+  border-radius:10px;
+  border: 1px solid var(--complimentary-color);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+
+  transition: all 0.3s ease;
+}
+
+.view-all-button:hover {
+  background: var(--complimentary-color);
+  color: var(--font-white);
+  transform: translateY(-3px);
+}
+
+.view-all-button span {
+  font-size: 18px;
+}
+
 
 .logo {
 font-family: "Playfair Display", serif;
@@ -75,10 +127,11 @@ display: flex;
 align-items: center;
 gap: 32px;
 font-size: 16px;
+font-weight: bold;
 }
 
 .nav-links a {
-transition: color 0.2s ease;
+transition: color 0.5s ease;
 }
 
 .nav-links a:hover {
@@ -184,6 +237,7 @@ letter-spacing: 2px;
 position: relative;
 height: 460px;
 background: var(--beige);
+border-radius:10%;
 }
 
 .hero-image img {
@@ -192,6 +246,7 @@ height: 100%;
 display: block;
 object-fit: cover;
 object-position: center 35%;
+border-radius:10%;
 }
 
 .image-caption {
@@ -228,7 +283,7 @@ align-items: center;
 justify-content: space-around;
 gap: 20px;
 background: var(--complimentary-color);
-color: var(--primary-color);
+color: var(--font-white);
 font-size: 11px;
 letter-spacing: 0.5px;
 }
@@ -275,6 +330,7 @@ position: relative;
 height: 330px;
 overflow: hidden;
 background: var(--beige);
+border-radius:10%;
 }
 
 .product-image img {
@@ -283,6 +339,7 @@ height: 100%;
 display: block;
 object-fit: cover;
 transition: transform 0.4s ease;
+
 }
 
 .product-card:hover .product-image img {
@@ -294,7 +351,8 @@ position: absolute;
 top: 15px;
 left: 15px;
 padding: 8px 11px;
-color:var(--primary-color);
+color:var(--font-white);
+border-radius: 10px;
 background:var(--complimentary-color);
 font-size: 10px;
 font-weight: bold;
@@ -403,14 +461,21 @@ line-height: 1.7;
 }
 
 @media (max-width: 900px) {
-.navbar {
-padding-right: 5%;
-padding-left: 5%;
-}
-
 .nav-links {
 gap: 17px;
 }
+
+  .navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .view-all-container {
+    margin-top: 35px;
+  }
 
 .hero {
 padding-right: 6%;

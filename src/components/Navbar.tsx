@@ -1,43 +1,61 @@
 "use client";
-//     Ssu<span>xu</span>luxe Hair 
-     
+
 import { useState } from "react";
+import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 
-
 export default function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const { cartCount } = useCart();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { cartCount } = useCart();
 
-    return (
-        <header className="navbar">
-            <a href="/" className="logo">
-            <div className="nav-icon">
-               <img
-        src="/Ssuxuluxe-hair.png"
-        alt="Beauty inspiration for Ssuxuluxe Hair"
-      /></div></a>
+  const closeMenu = () => setMenuOpen(false);
 
-            <button type="button" className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}
-                aria-label="Toggle navigation" 
-                aria-expanded={menuOpen}> ☰ </button>
-                
-                
-    <nav className={menuOpen ? "nav-links open" : "nav-links"}>
-      <a href="/">Home</a>
-      <a href="/shop" onClick={() => setMenuOpen(false)}>
-        Shop
-      </a>
-      <a href="#about" onClick={() => setMenuOpen(false)}>
-        About
-      </a>
-      <a href="#contact" onClick={() => setMenuOpen(false)}>
-        Contact
-      </a>
-      
-    </nav><a href="/cart" className="cart-link">
-        Cart({cartCount})
-      </a>
+  return (
+    <header className="navbar">
+      <Link href="/" className="logo" onClick={closeMenu}>
+        <div className="nav-icon">
+          <img
+            src="/Ssuxuluxe-hair.png"
+            alt="Ssuxuluxe Hair"
+          />
+        </div>
+      </Link>
+
+      <button
+        type="button"
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle navigation"
+        aria-expanded={menuOpen}
+        aria-controls="main-navigation"
+      >
+        {menuOpen ? "✕" : "☰"}
+      </button>
+
+      <nav
+        id="main-navigation"
+        className={menuOpen ? "nav-links open" : "nav-links"}
+      >
+        <Link href="/" onClick={closeMenu}>
+          Home
+        </Link>
+
+        <Link href="/shop" onClick={closeMenu}>
+          Shop
+        </Link>
+
+        <Link href="/#about" onClick={closeMenu}>
+          About
+        </Link>
+
+        <Link href="/#contact" onClick={closeMenu}>
+          Contact
+        </Link>
+      </nav>
+
+      <Link href="/cart" className="cart-link" onClick={closeMenu}>
+        Cart ({cartCount})
+      </Link>
     </header>
-    );
+  );
 }

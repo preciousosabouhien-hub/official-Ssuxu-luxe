@@ -38,7 +38,7 @@ export default function Hero() {
     <div className="hero-image ">
       
       <img
-        src="/wig1.jpeg"
+        src="/wig1.png"
         alt="Beauty inspiration for Ssuxuluxe Hair"
       />
 
