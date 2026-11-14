@@ -23,11 +23,6 @@ if (!product) {notFound();}
 return (
 <main>
      <Navbar />
-     <h3 className="link-route">
-    <Link href="/"> Home → </Link>
-    <Link href="/shop">Shop → </Link>
-    {product.name}
-     </h3>
 <ProductDetails product={product} />
 <Footer />
 </main>

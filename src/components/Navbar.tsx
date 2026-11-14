@@ -46,7 +46,7 @@ export default function Navbar() {
           Shop
         </Link>
 
-        <Link href="/#about" onClick={closeMenu}>
+        <Link href="/about" onClick={closeMenu}>
           About
         </Link>
 

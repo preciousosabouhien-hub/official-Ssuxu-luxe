@@ -67,7 +67,7 @@ return (
   <div className="product-details-info">
 
     <ScrollReveal delay={400}>
-      <p className="eyebrow">{product.category}</p>
+      <p className="product-eyebrow">{product.category}</p>
     </ScrollReveal>
 
     <ScrollReveal delay={450}>
