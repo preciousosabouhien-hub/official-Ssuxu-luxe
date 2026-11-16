@@ -34,7 +34,7 @@ return (
     <p className="cart-item-price">
       ${item.product.price.toLocaleString("en-NG")}
     </p></Link>
-    <div className="quantity-control">
+    <div className="quantity-contrl">
       <button
         type="button"
         onClick={() => decreaseQuantity(item.product.id)}

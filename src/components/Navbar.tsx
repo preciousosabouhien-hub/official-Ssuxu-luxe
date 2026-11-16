@@ -50,7 +50,7 @@ export default function Navbar() {
           About
         </Link>
 
-        <Link href="/#contact" onClick={closeMenu}>
+        <Link href="/contact" onClick={closeMenu}>
           Contact
         </Link>
       </nav>

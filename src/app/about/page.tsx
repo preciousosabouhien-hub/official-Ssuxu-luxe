@@ -1,12 +1,12 @@
 import Link from "next/link";
-import  ScrollReveal from "@/components/scrollReveal";
+import  ScrollReveal from "@/components/about/scrollReveal";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AboutHero from "@/components/about-hero";
-import AboutStory from "@/components/about-story";
-import BrandValues from "@/components/about-brand-values";
-import AboutCollection from "@/components/about-collection";
-import AboutClosing from "@/components/about-closing-section";
+import AboutHero from "@/components/about/about-hero";
+import AboutStory from "@/components/about/about-story";
+import BrandValues from "@/components/about/about-brand-values";
+import AboutCollection from "@/components/about/about-collection";
+import AboutClosing from "@/components/about/about-closing-section";
 export default function AboutPage(){
     return (
         <main className="about-page">
@@ -16,7 +16,7 @@ export default function AboutPage(){
             <BrandValues />
             <AboutCollection />
             <AboutClosing /> 
-                <Footer />
-</main>
+            <Footer />
+        </main>
     );
 }

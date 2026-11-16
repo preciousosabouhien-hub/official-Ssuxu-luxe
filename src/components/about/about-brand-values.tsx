@@ -20,7 +20,7 @@ export default function BrandValues() {
                     <ScrollReveal delay={200}>
                     <article className="about-value-card">
                     <span>01</span>
-                    <h3>Quantity</h3>
+                    <h3>Quality</h3>
                     <p> We aim to offer carefully selected styles that meet our brand's quality expressions.
                     </p>
                     </article>
