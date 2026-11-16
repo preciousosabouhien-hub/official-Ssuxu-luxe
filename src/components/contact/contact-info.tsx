@@ -32,7 +32,7 @@ export default function ContactInfo(){
                                 </article>    
                             </ScrollReveal>
 
-                            <ScrollReveal delay="{300">
+                            <ScrollReveal delay={300}>
                                 <article className="contact-info-card">
                                     <span> <FontAwesomeIcon icon={faClock} /></span>
                                     <h3> Business Hours </h3>

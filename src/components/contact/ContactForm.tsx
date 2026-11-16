@@ -5,7 +5,7 @@ import { useState, type FormEvent } from "react";
 export default function ContactForm(){
     const [ submitted, setSubmitted ] = useState(false);
 
-    const handleSubmit = (event: FormEvent<HTMlFormElement>) => {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         // To connect to backend later 
