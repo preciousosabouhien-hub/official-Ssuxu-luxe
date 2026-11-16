@@ -1,5 +1,5 @@
 import Link from "next/link";
-import  ScrollReveal from "@/components/about/scrollReveal";
+import  ScrollReveal from "@/components/scrollReveal";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AboutHero from "@/components/about/about-hero";
