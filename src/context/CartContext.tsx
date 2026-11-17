@@ -24,8 +24,12 @@ cart: CartItem[];
 cartCount: number;
 subtotal: number;
 addToCart: (product: Product, options: ProductOptions) => void;
-increaseQuantity: (productId: number) => void;
-decreaseQuantity: (productId: number) => void;
+increaseQuantity: (productId: number, 
+                   options: ProductOptions
+) => void;
+decreaseQuantity: (productId: number, 
+                   options: ProductOptions
+) => void;
 removeFromCart: (productId: number, selectedOptions?: ProductOptions) => void;
 clearCart: () => void;
 }
@@ -107,17 +111,16 @@ JSON.stringify(item.selectedOptions) === JSON.stringify(options)
 
 };
 
-const increaseQuantity = (productId: number) => {
+const increaseQuantity = (productId: number, options: ProductOptions ) => {
 setCart((currentCart) =>
 currentCart.map((item) =>
-item.product.id === productId
+item.product.id === productId && JSON.stringify(item.selectedOptions) === JSON.stringify(options)
 ? { ...item, quantity: item.quantity + 1 } : item)); };
 
 const decreaseQuantity = (productId: number) => {
 setCart((currentCart) =>
-currentCart
-.map((item) =>
-item.product.id === productId
+currentCart.map((item) =>
+item.product.id === productId && JSON.stringify(item.selectedOptions) === JSON.stringify(options)
 ? { ...item, quantity: item.quantity - 1 }: item)
 .filter((item) => item.quantity > 0));};
 

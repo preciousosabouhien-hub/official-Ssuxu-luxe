@@ -39,7 +39,7 @@ return (
   </ScrollReveal>
 
   <ScrollReveal delay={800}>
-  <Link href="/#shop" className="continue-shopping">
+  <Link href="/shop" className="continue-shopping">
     Continue Shopping
   </Link>
   </ScrollReveal>

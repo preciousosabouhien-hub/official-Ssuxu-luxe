@@ -59,7 +59,7 @@ return (
     <div className="quantity-contrl">
       <button
         type="button"
-        onClick={() => decreaseQuantity(item.product.id)}
+        onClick={() => decreaseQuantity(item.product.id, item.selectedOptions)}
         aria-label={`Decrease ${item.product.name} quantity`}
       >
         −
@@ -67,7 +67,7 @@ return (
       <span>{item.quantity}</span>
       <button
         type="button"
-        onClick={() => increaseQuantity(item.product.id)}
+        onClick={() => increaseQuantity(item.product.id, item.selectedOptions)}
         aria-label={`Increase ${item.product.name} quantity`}
       >
         +
@@ -76,7 +76,7 @@ return (
     <button
       type="button"
       className="remove-button"
-      onClick={() => removeFromCart(item.product.id)}
+      onClick={() => removeFromCart(item.product.id, item.selectedOptions)}
     >
       Remove
     </button>
