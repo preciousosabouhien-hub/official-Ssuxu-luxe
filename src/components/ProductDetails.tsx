@@ -208,8 +208,8 @@ return (
       {!isAvailable
         ? "Out of Stock"
         : added
-          ? "Added to Bag ✓"
-          : "Add to Bag"}
+          ? "Added to Cart ✓"
+          : "Add to Cart"}
     </button>
     </ScrollReveal>
 

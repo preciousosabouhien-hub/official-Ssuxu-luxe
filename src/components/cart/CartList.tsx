@@ -9,10 +9,10 @@ export default function CartList(){
     return (
         <div className="cart-items">
         {cart.map((item, index) => (
-        <ScrollReveal key={item.product.id} delay={index * 500}>
+        <ScrollReveal key={`${item.product.id} - ${JSON.stringify(item.selectedOptions)}`} delay={index * 500}>
     <CartItem  item={item} />
             </ScrollReveal>
-            
+        
         ))}</div>
     );
 }

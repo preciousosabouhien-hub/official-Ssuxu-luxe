@@ -5,14 +5,14 @@ export default function ContactInfo(){
     return (
 
                    <section className="contact-information">
-                        <ScrollReveal>
+                       
                             <div className="contact-heading">
-                                <p className="contact-eyebrow">GET IN TOUCH </p>
-                                <h2> How Can We Help?</h2>
+                             <ScrollReveal delay={200}>    <p className="contact-eyebrow">GET IN TOUCH </p></ScrollReveal>
+                          <ScrollReveal delay={400}>       <h2> How Can We Help?</h2></ScrollReveal>
                             </div>
-                        </ScrollReveal>
+                        
                         <div className="contact-info-grid">
-                            <ScrollReveal delay={100}>
+                            <ScrollReveal delay={600}>
                                 <article className="contact-info-card">
                                     <span> <FontAwesomeIcon icon={faEnvelope} /></span>
                                     <h3> Email Support</h3>
@@ -21,7 +21,7 @@ export default function ContactInfo(){
                                         Contact via Email</a>
                                 </article>
                                 </ScrollReveal>
-                            <ScrollReveal delay={200}>
+                            <ScrollReveal delay={800}>
                             <article className="contact-info-card">
                                 <span> <FontAwesomeIcon icon={faPhone} /></span>
                                 <h3>Phone Support</h3>
@@ -32,7 +32,7 @@ export default function ContactInfo(){
                                 </article>    
                             </ScrollReveal>
 
-                            <ScrollReveal delay={300}>
+                            <ScrollReveal delay={1000}>
                                 <article className="contact-info-card">
                                     <span> <FontAwesomeIcon icon={faClock} /></span>
                                     <h3> Business Hours </h3>

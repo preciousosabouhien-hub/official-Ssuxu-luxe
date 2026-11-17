@@ -376,11 +376,7 @@ font-weight: 500;
 color:var(--font-white);
 }
 
-.product-category {
-margin-top: 6px;
-color: var(--muted);
-font-size: 11px;
-}
+
 
 .product-price {
 padding-top: 3px;
@@ -389,7 +385,10 @@ font-weight: 700;
 white-space: nowrap;
 color: var(--font-white);
 }
-
+.product-length{
+font-size: 12px;
+letter-spacing: 0.5;
+}
 .add-button {
 width: 100%;
 padding: 13px 15px;
@@ -664,6 +663,10 @@ font-family: "Playfair Display", serif;
 font-size: 20px;
 margin: 8px 0;
 }
+.product-category{
+ color: var(--font-white);
+ font-weight: bold;
+}
 
 .cart-item-price,
 .cart-line-total {
@@ -791,6 +794,24 @@ margin: 0 auto;
 
 .empty-cart .checkout-button:hover {
   border: 1px solid var(--complimentary-color);
+}
+
+.cart-product-options{
+  margin: 12px 0;
+  padding: 12px;
+  background: var(--complimentary-color);
+  border-radius: 10px;
+}
+
+.cart-product-options p {
+  font-size: 13px;
+  color: var(--font-white);
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.cart-product-options strong {
+  color: var(--muted);
 }
 
 @media (max-width: 768px) {

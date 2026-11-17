@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import type { CartItem as CartItemType } from "@/context/CartContext";
-import type { Product } from "@/data/products";
+
 
 interface CartItemProps {
 item: CartItemType;
@@ -16,6 +16,8 @@ increaseQuantity,
 decreaseQuantity,
 removeFromCart,
 } = useCart();
+
+const options = item.selectedOptions;
 
 return (
   <article className="cart-item" key={item.product.id}>
@@ -30,10 +32,30 @@ return (
     <p className="product-category">
       {item.product.category}
     </p>
-    <h3>{item.product.name}</h3>
+
+    <h3>{item.product.name} </h3>
     <p className="cart-item-price">
       ${item.product.price.toLocaleString("en-NG")}
     </p></Link>
+     
+     <div className="cart-product-options">
+      <p>
+        <strong> Hair Length:</strong>{" "}
+        {options.length || "Not selected"}
+      </p>
+        <p>
+        <strong> Lace Type:</strong>{" "}
+        {options.laceType || "Not selected"}
+      </p>
+        <p>
+        <strong> Density:</strong>{" "}
+        {options.density || "Not selected"}
+      </p>
+        <p>
+        <strong> Color:</strong>{" "}
+        {options.color || "Not selected"}
+      </p>
+    </div>
     <div className="quantity-contrl">
       <button
         type="button"
