@@ -117,7 +117,7 @@ currentCart.map((item) =>
 item.product.id === productId && JSON.stringify(item.selectedOptions) === JSON.stringify(options)
 ? { ...item, quantity: item.quantity + 1 } : item)); };
 
-const decreaseQuantity = (productId: number) => {
+const decreaseQuantity = (productId: number, options: ProductOptions ) => {
 setCart((currentCart) =>
 currentCart.map((item) =>
 item.product.id === productId && JSON.stringify(item.selectedOptions) === JSON.stringify(options)
