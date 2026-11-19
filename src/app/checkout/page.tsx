@@ -4,9 +4,11 @@ import { useState, type FormEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
+import { useRouter } from "next/navigation";
 
 export default function CheckoutPage() {
-  const { cart, subtotal } = useCart();
+  const { cart, subtotal, clearCart } = useCart();
+  const router = useRouter();
 
   const [shippingMethod, setShippingMethod] = useState("standard");
   const [submitted, setSubmitted] = useState(false);
@@ -19,9 +21,48 @@ export default function CheckoutPage() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+     
+    const formData = new FormData(event.currentTarget);
 
-    // Demonstration only.
-    // Real order processing will be added with the backend.
+    const order = {
+      orderNumber: `SSX-${Date.now().toString().slice(-8)}`,
+
+      customer: {
+        firstName: String(formData.get("firstName") || ""), 
+        lastName: String(formData.get("lastName") || ""),
+        email: String(formData.get("email") || ""),
+      },
+
+     shippingAddress: {
+      address: String(formData.get("address") || ""),
+      city: String(formData.get("city") || ""),
+      state: String(formData.get("state") || ""),
+      country: String(formData.get("country") || ""),
+      postalCode: String(formData.get("postalCode") || ""),
+     },
+
+     shippingMethod,
+     items: cart.map((item) => ({
+      id: item.product.id,
+      name: item.product.name,
+      image: item.product.image,
+      price: item.product.price,
+      quantity: item.quantity,
+      selectedOptions: item.selectedOptions,
+     })),
+
+     subtotal,
+    };
+
+    sessionStorage.setItem(
+      "ssuxuluxe-last-order",
+      JSON.stringify(order)
+    );
+
+    clearCart();
+
+    router.push("/order-success");
+
     setSubmitted(true);
   };
 
@@ -70,12 +111,12 @@ export default function CheckoutPage() {
               <div className="checkout-form-grid">
                 <div className="checkout-field">
                   <label htmlFor="firstName">First Name</label>
-                  <input id="firstName" name="firstName" required />
+                  <input id="firstName" name="firstName" type="text" required />
                 </div>
 
                 <div className="checkout-field">
                   <label htmlFor="lastName">Last Name</label>
-                  <input id="lastName" name="lastName" required />
+                  <input id="lastName" name="lastName" type="text" required />
                 </div>
 
                 <div className="checkout-field">
@@ -119,22 +160,22 @@ export default function CheckoutPage() {
 
                 <div className="checkout-field full-width">
                   <label htmlFor="address">Street Address</label>
-                  <input id="address" name="address" required />
+                  <input id="address" name="address" type="text" required />
                 </div>
 
                 <div className="checkout-field">
                   <label htmlFor="city">City</label>
-                  <input id="city" name="city" required />
+                  <input id="city" name="city" type="text" required />
                 </div>
 
                 <div className="checkout-field">
                   <label htmlFor="state">State / Province</label>
-                  <input id="state" name="state" required />
+                  <input id="state" name="state" type="text" required />
                 </div>
 
                 <div className="checkout-field">
                   <label htmlFor="postalCode">ZIP / Postal Code</label>
-                  <input id="postalCode" name="postalCode" required />
+                  <input id="postalCode" name="postalCode" inputMode="numeric" type="text"  autoComplete="postal-code"/>
                 </div>
               </div>
             </section>
