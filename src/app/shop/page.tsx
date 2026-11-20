@@ -1,6 +1,6 @@
     import Link from "next/link";
     import { products } from "@/data/products";
-    import  ProductCard from "@/components/ProductCard";
+    import ProductCard from "@/components/ProductCard";
     import ScrollReveal from "@/components/scrollReveal";
     import Navbar from "@/components/Navbar";
     import Footer from "@/components/Footer";
@@ -14,11 +14,11 @@
                   </ScrollReveal>
 
                    <ScrollReveal delay={400}>
-                 <h1>Find Your Perfect Look</h1>
+                 <h1><span>Find Your</span> Perfect Look</h1>
                     </ScrollReveal>
 
                     <ScrollReveal delay={450}>
-                 <p className="shop-hero-p"> Explore our collection of beautiful wigs, 
+                 <p className="shop-hero-p"> Explore our collection of beautiful wigs, <br/>
                     carefully selected to help you look and feel your best.
                  </p>
                  </ScrollReveal>
@@ -36,11 +36,6 @@
                         <h2>All Products</h2>
                         </ScrollReveal>
                         </div>
-                        <ScrollReveal delay={700}>
-                        <Link href="/" className="back-home-link">
-                        Back to Home
-                        </Link>
-                        </ScrollReveal>
                         </div>
                         <div className="shop-products-grid">
                         {products.map((product, index) => (

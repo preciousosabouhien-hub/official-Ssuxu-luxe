@@ -11,7 +11,8 @@
 --white: #ffffff;
 --font-white: #ffffff;
 --primary-btn-color: #bb1a73;
---success: #156309;
+--success: #1aa505;
+--shop-hero: #d31f97;
 
 }
 
@@ -1110,9 +1111,30 @@ margin: 15px 0;
 }
 
 .shop-hero{
-  text-align:center;
+  background-image:
+  linear-gradient(
+    rgba(0, 0, 0, 0.486),
+    rgba(0, 0, 0, 0.459)
+  ),
+  url(/images/shop-hero.jpeg);
   padding: 100px 20px 75px;
-  background: var(--complimentary-color-1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit:fill;
+ 
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items:left;
+  text-align:left;
+
+
+
+
+
+ /* background: var(--complimentary-color-1); */
 }
 
 .shop-eyebrow {
@@ -1123,18 +1145,24 @@ margin: 15px 0;
   margin-bottom: 15px;
 }
 
+.shop-hero h1 span{
+  color:var(--font-white);
+  font-size: clamp(35px, 5vw, 58px);
+}
 .shop-hero h1{
-  color: var(--primary-color);
+  color:var(--primary-btn-color);
   font-size: clamp(35px, 5vw, 58px);
   font-family: Georgia, serif;
   margin-bottom: 20px;
 }
 
 .shop-hero-p{
-  max-width: 550px;
-  margin: 0 auto 20px;
-  color: var(--primary-color);
+  color: var(--font-white);
   line-height: 1.8;
+  justify-content: left;
+  font-weight: bold;
+  align-items:left;
+  text-align:left;
 }
 
 .shop-hero span{
@@ -1197,12 +1225,74 @@ margin: 15px 0;
   .link-route{
     font-size:11px;
   }
+  .shop-hero{
+    padding: 40px 20px;
+    min-height: 400px;
+    background-position: center;
+    background-image:
+  linear-gradient(
+    rgba(0, 0, 0, 0.418),
+    rgba(0, 0, 0, 0.815)
+  ),
+  url(/images/shop-hero.jpeg);
+
+  }
+  .shop-eyebrow {
+  margin-top: 35%;
+    font-size:10px;
+     letter-spacing: 1.5px;
+}
+.shop-hero h1 span{
+  font-size: clamp(40px, 4vw, 48px);
+}
+.shop-hero h1{
+  font-size: clamp(40px, 4vw, 48px);
+  color:var(--shop-hero);
+  font-weight: bolder;
+}
+
+.shop-hero-p{
+ font-size:15px;
+ letter-spacing: 0.8px;
+ font-weight:normal;
+}
+
+.shop-hero span{
+ font-size:10px;
+ color: var(--muted);
+ letter-spacing: 1.5px;
+}
+
 }
 
 @media (max-width: 550px){
   .shop-hero{
-    padding: 75px 20px 55px;
+    padding: 40px 20px;
+    min-height: 300px;
+    background-position: center;
   }
+  .shop-eyebrow {
+  margin-top: 35%;
+    font-size:8px;
+     letter-spacing: 1.5px;
+}
+.shop-hero h1 span{
+  font-size: clamp(20px, 3vw, 38px);
+}
+.shop-hero h1{
+  font-size: clamp(20px, 3vw, 38px);
+  
+}
+
+.shop-hero-p{
+ font-size:13px;
+ letter-spacing: 0.8px;
+}
+
+.shop-hero span{
+ font-size:8px;
+ font-weight: bold;
+}
 
   .shop-products-section{
     padding: 50px 18px;
