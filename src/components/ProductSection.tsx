@@ -34,10 +34,7 @@ export default function ProductSection() {
         </Link>
       </div>
 
-      <p className="demo-note">
-        These products and prices are placeholders. We will replace them
-        with the actual wig inventory.
-      </p>
+     
     </section>
   );
 }
