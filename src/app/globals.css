@@ -1610,9 +1610,25 @@ margin: 15px 0;
 /* HERO */
 
 .contact-hero {
-  background: var(--complimentary-color-1);
-  text-align: center;
-  padding: 100px 20px;
+  
+  background-image:
+  linear-gradient(
+    rgba(0, 0, 0, 0.486),
+    rgba(0, 0, 0, 0.459)
+  ),
+  url(/images/contact-hero.jpeg);
+  padding: 100px 20px 75px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit:fill;
+ 
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items:left;
+  text-align:left;
 }
 
 .contact-hero h1 {
@@ -1620,14 +1636,16 @@ margin: 15px 0;
   font-size: clamp(35px, 5vw, 55px);
   font-weight: 400px;
   margin-bottom: 20px;
-  color:var(--primary-color);
+  color: var(--font-white);
 }
 
 .contact-hero p:not(.contact-eyebrow){
- max-width: 550px;
- margin: auto;
- color: var(--primary-color);
+ color: var(--font-white);
  line-height: 1.8;
+ letter-spacing: 0.5;
+ justify-content: left;
+ align-items:left;
+ text-align:left;
 }
 
 /* CONTACT INFORMATION */
@@ -1838,6 +1856,7 @@ margin: 15px 0;
 
 /* Responsive */
 @media (max-width: 800px){
+  
   .contact-info-grid {
     grid-template-columns: 1fr;
   }
@@ -1847,12 +1866,59 @@ margin: 15px 0;
     gap: 40px;
     padding: 70px 6%;
   }
+
+  .contact-hero {
+   padding: 40px 20px;
+    min-height: 400px;
+    background-position: center;
+    background-image:
+  linear-gradient(
+    rgba(0, 0, 0, 0.418),
+    rgba(0, 0, 0, 0.815)
+  ),
+
+}
+
+.contact-eyebrow {
+   margin-top: 35%;
+   font-size:10px;
+   letter-spacing: 1.5px;
+}
+
+.contact-hero h1{
+  font-size: clamp(40px, 4vw, 48px);
+  color:var(--font-white);
+  font-weight: bolder;
+}
+
+.contact-hero p:not(.contact-eyebrow){
+ font-size:15px;
+ letter-spacing: 0.8px;
+ font-weight:normal;
+}
 }
 
 @media (max-width: 550px){
-  .contact-hero{
-    padding: 75px 20px;
+ 
+  .contact-hero{ 
+    padding: 40px 20px;
+    min-height: 300px;
+    background-position: center;
   }
+  .contact-eyebrow{
+     margin-top: 35%;
+     font-size:8px;
+     letter-spacing: 1.5px;
+  }
+    
+.contact-hero h1{
+  font-size: clamp(20px, 3vw, 38px);
+  
+}
+.contact-hero p:not(.contact-eyebrow){
+ font-size:13px;
+ letter-spacing: 0.8px;
+}
 
   .contact-heading h2,
    .contact-main-text h2,
