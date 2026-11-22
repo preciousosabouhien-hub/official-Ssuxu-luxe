@@ -5,10 +5,12 @@ import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark, faCartShopping } from "@fortawesome/free-solid-svg-icons" ;
+import { usePathname } from "next/navigation" ;
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { cartCount } = useCart();
+  const pathname = usePathname();
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -38,19 +40,19 @@ export default function Navbar() {
         id="main-navigation"
         className={menuOpen ? "nav-links open" : "nav-links"}
       >
-        <Link href="/" onClick={closeMenu}>
+        <Link href="/" className={pathname === "/" ? "active" : ""} onClick={closeMenu}>
           Home
         </Link>
 
-        <Link href="/shop" onClick={closeMenu}>
+        <Link href="/shop" className={pathname === "/shop" ? "active" : ""} onClick={closeMenu}>
           Shop
         </Link>
 
-        <Link href="/about" onClick={closeMenu}>
+        <Link href="/about" className={pathname === "/about" ? "active" : ""} onClick={closeMenu}>
           About
         </Link>
 
-        <Link href="/contact" onClick={closeMenu}>
+        <Link href="/contact" className={pathname === "/contact" ? "active" : ""} onClick={closeMenu}>
           Contact
         </Link>
       </nav>
