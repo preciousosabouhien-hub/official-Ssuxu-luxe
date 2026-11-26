@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
-import { products } from "@/data/products";
 import ProductCard from "./ProductCard";
 import ScrollReveal from "./scrollReveal";
+import { useProducts } from "@/hooks/useProducts";
 
 export default function ProductSection() {
+  const { products, loading, error } = useProducts();
+
   const featuredProducts = products.slice(0, 8);
 
   return (
@@ -19,22 +23,27 @@ export default function ProductSection() {
         </p>
       </div>
 
-      <div className="product-grid">
-        {featuredProducts.map((product, index) => (
-          <ScrollReveal key={product.id} delay={index * 150}>
-            <ProductCard product={product} />
-          </ScrollReveal>
-        ))}
-      </div>
+      {loading ? (
+        <p>Loading products...</p>
+      ) : error ? (
+        <p>Unable to load products. Please try again later.</p>
+      ) : featuredProducts.length === 0 ? (
+        <p>No products are currently available.</p>
+      ) : (
+        <div className="product-grid">
+          {featuredProducts.map((product, index) => (
+            <ScrollReveal key={product.id} delay={index * 150}>
+              <ProductCard product={product} />
+            </ScrollReveal>
+          ))}
+        </div>
+      )}
 
       <div className="view-all-container">
         <Link href="/shop" className="view-all-button">
-          View All Products
-          <span> → </span>
+          View All Products <span> → </span>
         </Link>
       </div>
-
-     
     </section>
   );
 }
