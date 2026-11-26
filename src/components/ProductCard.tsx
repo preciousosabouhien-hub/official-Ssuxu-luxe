@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import type { Product } from "@/types/product";
+import type { Product } from "@/types/products";
 
 interface ProductCardProps {
   product: Product;

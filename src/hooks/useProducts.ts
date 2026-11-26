@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import type { Product } from "@/types/product";
+import type { Product } from "@/types/products";
 
 export function useProducts() {
   const [products, setProducts] = useState<Product[]>([]);
