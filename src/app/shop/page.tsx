@@ -1,5 +1,5 @@
     import Link from "next/link";
-    import { products } from "@/data/products";
+    import { products } from "@/types/products";
     import ProductCard from "@/components/ProductCard";
     import ScrollReveal from "@/components/scrollReveal";
     import Navbar from "@/components/Navbar";
